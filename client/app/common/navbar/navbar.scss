@@ -11,8 +11,34 @@
   }
 
   .logo {
-    color: $lightTextColor;
+
+    a {
+      color: $lightTextColor;
+    }
+    h1 {
+      line-height: 0.5em;
+    }
+
     margin-right: 50%;
+  }
+
+  .pizza-logo {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    img {
+      width: 60px;
+      animation: rotate 2s linear infinite;
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg)
+      }
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
   }
 
   .nav-links span {

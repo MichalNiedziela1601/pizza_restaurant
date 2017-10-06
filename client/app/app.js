@@ -2,7 +2,11 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
+import Directives from './directives/directives';
 import AppComponent from './app.component';
+import UiBootstrap from 'angular-ui-bootstrap';
+import Animate from 'angular-animate';
+import Touch from 'angular-touch';
 import 'normalize.css';
 require('bootstrap-loader');
 
@@ -13,7 +17,11 @@ window.jQuery = $;
 angular.module('app', [
     uiRouter,
     Common,
-    Components
+    Components,
+    Directives,
+    UiBootstrap,
+    Animate,
+    Touch
   ])
   .config(($locationProvider) => {
     "ngInject";
