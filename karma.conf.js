@@ -19,12 +19,12 @@ module.exports = function (config) {
       require("karma-mocha"),
       require("karma-mocha-reporter"),
       require("karma-sourcemap-loader"),
-      require("karma-webpack")
+      require("karma-webpack"),
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'spec.bundle.js': ['webpack', 'sourcemap'] },
+    preprocessors: { 'spec.bundle.js': ['webpack', 'sourcemap']},
 
     webpack: {
       devtool: 'inline-source-map',
@@ -63,6 +63,8 @@ module.exports = function (config) {
     browsers: ['Chrome'],
 
     // if true, Karma runs tests once and exits
-    singleRun: true
+    singleRun: true,
+
+
   });
 };

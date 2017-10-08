@@ -10,7 +10,7 @@ import Touch from 'angular-touch';
 import 'normalize.css';
 require('bootstrap-loader');
 
-var $ = require('jquery');
+const $ = require('jquery');
 window.jQuery = $;
 
 
@@ -22,12 +22,13 @@ angular.module('app', [
     UiBootstrap,
     Animate,
     Touch
-  ])
-  .config(($locationProvider) => {
-    "ngInject";
-    // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
-    // #how-to-configure-your-server-to-work-with-html5mode
-    $locationProvider.html5Mode(true).hashPrefix('!');
-  })
+])
+        .config($locationProvider =>
+        {
+            'ngInject';
+            // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
+            // #how-to-configure-your-server-to-work-with-html5mode
+            $locationProvider.html5Mode(true).hashPrefix('!');
+        })
 
-  .component('app', AppComponent);
+        .component('app', AppComponent);
