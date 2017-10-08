@@ -3,7 +3,7 @@ class HeroController {
     {
         this.name = 'hero';
         this.active = 0;
-        this.myInterval = 4000;
+        this.myInterval = 5000;
         this.slides = [
             {
                 id: 0,
@@ -15,7 +15,7 @@ class HeroController {
                 image: 'assets/img/hero_pizza_2.jpg',
                 text: 'Our pizza is delicious'
             }
-        ]
+        ];
     }
 }
 
