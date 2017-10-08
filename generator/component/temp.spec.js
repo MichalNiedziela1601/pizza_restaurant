@@ -1,4 +1,4 @@
-import <%= upCaseName %>Module from './<%= name %>'
+import <%= upCaseName %>Module from './<%= name %>';
 import <%= upCaseName %>Controller from './<%= name %>.controller';
 import <%= upCaseName %>Component from './<%= name %>.component';
 import <%= upCaseName %>Template from './<%= name %>.html';
@@ -21,7 +21,7 @@ describe('<%= upCaseName %>', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
+      const controller = makeController();
       expect(controller).to.have.property('name');
     });
   });
@@ -36,7 +36,7 @@ describe('<%= upCaseName %>', () => {
 
   describe('Component', () => {
       // component/directive specs
-      let component = <%= upCaseName %>Component;
+      const component = <%= upCaseName %>Component;
 
       it('includes the intended template',() => {
         expect(component.template).to.equal(<%= upCaseName %>Template);
