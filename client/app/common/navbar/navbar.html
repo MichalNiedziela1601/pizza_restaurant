@@ -1,12 +1,15 @@
-<nav class="navbar">
-    <div class="pizza-logo">
-        <img src="assets/img/pizza-logo.png">
-    </div>
-    <div class="logo">
+<nav class="navbar" nav-fixed>
+    <div class="container">
+        <div class="pizza-logo">
+            <img src="assets/img/pizza-logo.png">
+        </div>
+        <div class="logo">
 
-        <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
-    </div>
-    <div class="nav-links">
-        <span><a ui-sref="about">about</a></span>
+            <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
+        </div>
+        <div class="nav-links">
+            <span><a ui-sref="about">About</a></span>
+            <span><a ui-sref="menu">Menu</a></span>
+        </div>
     </div>
 </nav>

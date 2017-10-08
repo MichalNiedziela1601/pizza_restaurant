@@ -1,0 +1,13 @@
+<navbar></navbar>
+<hero></hero>
+<section class="container">
+    <header>
+        <h1>{{ $ctrl.name | uppercase }}</h1>
+    </header>
+    <article>
+        <div class="menu-list">
+            <item ng-repeat="item in $ctrl.items" item="item"></item>
+        </div>
+    </article>
+
+</section>

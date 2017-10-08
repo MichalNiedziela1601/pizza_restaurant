@@ -1,0 +1,66 @@
+@import "../../../common/common";
+item {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid $lightBgColor;
+  border-radius: 4px;
+  padding: 0 12px 8px 12px;
+
+  .thumb {
+    position: relative;
+    overflow: hidden;
+    width: 150px;
+
+    &:hover {
+      .thumb-overlay {
+        opacity: 0.5;
+      }
+    }
+    img {
+      width: 150px;
+      height: auto;
+    }
+
+    .thumb-overlay {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: $darkBgColor;
+      opacity: 0;
+      transition: opacity .3s linear;
+    }
+  }
+
+  .ingredients {
+    margin-top: 8px;
+
+    li {
+      margin-right: 2px;
+      text-transform: capitalize;
+    }
+  }
+
+  .prices {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    .price {
+      flex: 1 1;
+      width: 30%;
+      background: $bgColor;
+      border-radius: 5px;
+      margin-right: 3%;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    
+
+  }
+}

@@ -10,6 +10,7 @@
     "globals": {
         "expect" : true,
         "inject": true,
-        "angular": true
+        "angular": true,
+        "$": true
     }
 }

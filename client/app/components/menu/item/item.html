@@ -1,0 +1,21 @@
+<div>
+    <h3>{{ $ctrl.item.name }}</h3>
+    <div class="thumb">
+        <img ng-src="assets/img/menu/{{$ctrl.item.thumbImage}}.jpeg">
+        <div class="thumb-overlay"></div>
+    </div>
+
+    <div class="ingredients">
+        <ul class="list-inline">
+            <li ng-repeat="ingredient in $ctrl.item.ingredients">{{ingredient}}</li>
+        </ul>
+    </div>
+
+    <div class="prices">
+        <div ng-repeat="price in $ctrl.item.prices" class="price">
+            <span><h5>Size: {{price.size}} cm</h5></span>
+            <span><h5>Price: {{price.price}} zł</h5></span>
+        </div>
+    </div>
+
+</div>

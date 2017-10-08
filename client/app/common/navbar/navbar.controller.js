@@ -1,7 +1,7 @@
 class NavbarController {
     constructor()
     {
-        this.name = 'navbar';
+        this.name = 'pizzeria devoile';
     }
 }
 
