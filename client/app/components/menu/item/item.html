@@ -1,7 +1,7 @@
 <div>
     <h3>{{ $ctrl.item.name }}</h3>
     <div class="thumb">
-        <img ng-src="assets/img/menu/{{$ctrl.item.thumbImage}}.jpeg">
+        <img ng-src="assets/img/menu/{{$ctrl.item.thumb}}.jpeg">
         <div class="thumb-overlay"></div>
     </div>
 
@@ -12,9 +12,9 @@
     </div>
 
     <div class="prices">
-        <div ng-repeat="price in $ctrl.item.prices" class="price">
-            <span><h5>Size: {{price.size}} cm</h5></span>
-            <span><h5>Price: {{price.price}} zł</h5></span>
+        <div ng-repeat="(key,value) in $ctrl.item.price" class="price">
+            <span><h5>Size: {{key}} cm</h5></span>
+            <span><h5>Price: {{value}} zł</h5></span>
         </div>
     </div>
 

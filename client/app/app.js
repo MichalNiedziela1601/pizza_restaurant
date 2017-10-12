@@ -7,6 +7,7 @@ import AppComponent from './app.component';
 import UiBootstrap from 'angular-ui-bootstrap';
 import Animate from 'angular-animate';
 import Touch from 'angular-touch';
+import Services from './services/services';
 import 'normalize.css';
 require('bootstrap-loader');
 
@@ -21,7 +22,8 @@ angular.module('app', [
     Directives,
     UiBootstrap,
     Animate,
-    Touch
+    Touch,
+    Services
 ])
         .config($locationProvider =>
         {
