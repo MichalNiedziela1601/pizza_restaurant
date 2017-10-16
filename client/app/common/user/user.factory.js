@@ -8,11 +8,7 @@ const UserFactory = function ($http)
     const isSignedIn = () => user.isSignedIn;
     const signIn = () =>
     {
-        return $http.get('api/hello').then(data =>
-        {
-            user.isSignedIn = true;
-            return data.data;
-        });
+        user.isSignedIn = true;
     };
 
     return {getUser, isSignedIn, signIn};

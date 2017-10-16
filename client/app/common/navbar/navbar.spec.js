@@ -1,4 +1,5 @@
 import NavbarModule from './navbar';
+import UserModule from '../user/user';
 
 describe('Navbar', () =>
 {
@@ -7,8 +8,10 @@ describe('Navbar', () =>
     // let $location;
     let $componentController;
     let $compile;
+    let UserService;
 
     beforeEach(window.module(NavbarModule));
+    beforeEach(window.module(UserModule));
 
     beforeEach(inject($injector =>
     {
@@ -16,6 +19,7 @@ describe('Navbar', () =>
         $componentController = $injector.get('$componentController');
         // $state = $injector.get('$state');
         // $location = $injector.get('$location');
+        UserService = $injector.get('User');
         $compile = $injector.get('$compile');
     }));
 
