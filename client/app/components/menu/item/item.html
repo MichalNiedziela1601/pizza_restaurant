@@ -1,6 +1,6 @@
 <div>
     <h3>{{ $ctrl.item.name }}</h3>
-    <div class="thumb">
+    <div class="thumb" ng-click="$ctrl.showImage()">
         <img ng-src="assets/img/menu/{{$ctrl.item.thumb}}.jpeg">
         <div class="thumb-overlay"></div>
     </div>

@@ -5,7 +5,8 @@ import './item.scss';
 const itemComponent = {
     restrict: 'E',
     bindings: {
-        item: '<'
+        item: '<',
+        onShowImage: '&'
     },
     template,
     controller

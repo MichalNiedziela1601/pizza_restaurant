@@ -1,4 +1,12 @@
 <navbar></navbar>
+<div class="overlay" ng-if="$ctrl.show" ng-click="$ctrl.show = false"></div>
+<div class="overlay-container" ng-if="$ctrl.show"><img ng-src="assets/img/menu/{{$ctrl.showImage}}.jpeg">
+    <div class="bottom-content"><div class="left-panel">
+        <i class="glyphicon glyphicon-chevron-left" ng-click="$ctrl.prevImage()"></i>
+        <i class="glyphicon glyphicon-chevron-right" ng-click="$ctrl.nextImg()"></i>
+    </div>
+    <div class="right-panel"><i class="glyphicon glyphicon-remove" ng-click="$ctrl.show = false"></i></div></div>
+</div>
 <hero></hero>
 <section class="container">
     <header>
@@ -6,7 +14,7 @@
     </header>
     <article>
         <div class="menu-list">
-            <item ng-repeat="item in $ctrl.items" item="item"></item>
+            <item ng-repeat="item in $ctrl.items" item="item" on-show-image="$ctrl.showGallery(image)"></item>
         </div>
     </article>
 
