@@ -2,15 +2,21 @@ import MenuModule from './menu';
 import MenuController from './menu.controller';
 import MenuComponent from './menu.component';
 import MenuTemplate from './menu.html';
+import DAOModule from '../../common/dao/dao';
 
 describe('Menu', () =>
 {
     let makeController;
+    let MenuService;
+    let  getMenu;
 
     beforeEach(window.module(MenuModule));
-    beforeEach(inject(() =>
+    beforeEach(window.module(DAOModule));
+    beforeEach(inject(_MenuDAO_ =>
     {
-        makeController = () => new MenuController();
+        MenuService = _MenuDAO_;
+        getMenu = sinon.stub(MenuService,'getMenu').resolves(['adfsdf']);
+        makeController = () => new MenuController(MenuService);
     }));
 
     describe('Module', () =>
@@ -25,6 +31,11 @@ describe('Menu', () =>
         { // erase if removing this.name from the controller
             const controller = makeController();
             expect(controller).to.have.property('name');
+        });
+        it('should call Menu.getMenu', () =>
+        {
+            makeController();
+            expect(getMenu).callCount(1);
         });
     });
 

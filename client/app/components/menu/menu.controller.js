@@ -4,53 +4,39 @@ class MenuController {
         'ngInject';
         this.menuDao = MenuDAO;
         this.name = 'menu';
-        // this.items = [
-        //     {
-        //         name: 'Margerita',
-        //         ingredients: ['cheese', 'sauce', 'oregano'],
-        //         prices: [
-        //             {size: 32, price: 14.00},
-        //             {size: 40, price: 17.00},
-        //             {size: 50, price: 21.00}
-        //         ],
-        //         thumbImage: 'margeritta'
-        //     },
-        //     {
-        //         name: 'Firmowa',
-        //         ingredients: ['cheese', 'sauce', 'oregano', 'grilled tune', 'olives', 'shrimp'],
-        //         prices: [
-        //             {size: 32, price: 22.00},
-        //             {size: 40, price: 28.00},
-        //             {size: 50, price: 36.00}
-        //         ],
-        //         thumbImage: 'firm_pizza'
-        //     },
-        //     {
-        //         name: 'Firmowa',
-        //         ingredients: ['cheese', 'sauce', 'oregano', 'grilled tune', 'olives', 'shrimp'],
-        //         prices: [
-        //             {size: 32, price: 22.00},
-        //             {size: 40, price: 28.00},
-        //             {size: 50, price: 36.00}
-        //         ],
-        //         thumbImage: 'firm_pizza'
-        //     },
-        //     {
-        //         name: 'Capri',
-        //         ingredients: ['cheese', 'sauce', 'mushrooms', 'oregano', 'pepper', 'corn'],
-        //         prices: [
-        //             {size: 32, price: 18.00},
-        //             {size: 40, price: 23.00},
-        //             {size: 50, price: 29.00}
-        //         ],
-        //         thumbImage: 'capri'
-        //     }
-        // ];
         this.menuDao.getMenu().then(menu =>
         {
-            console.log(menu);
             this.items = menu;
         });
+        this.show = false;
+    }
+
+    showGallery(image)
+    {
+        this.show = true;
+        this.showImage = image;
+    }
+
+    nextImg()
+    {
+        const menuItem = this.items.find(item => item.thumb === this.showImage);
+        const index = this.items.indexOf(menuItem);
+        if (this.items.length - 1 <= index) {
+            this.showImage = this.items[0].thumb;
+        } else {
+            this.showImage = this.items[index + 1].thumb;
+        }
+    }
+
+    prevImage()
+    {
+        const menuItem = this.items.find(item => item.thumb === this.showImage);
+        const index = this.items.indexOf(menuItem);
+        if (0 >= index) {
+            this.showImage = this.items[this.items.length - 1].thumb;
+        } else {
+            this.showImage = this.items[index - 1].thumb;
+        }
     }
 }
 

@@ -17,3 +17,61 @@ menu {
     }
   }
 }
+
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  opacity: 0.8;
+  top: 0;
+  z-index: 50;
+
+  &.ng-enter, &.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  }
+
+  &.ng-enter, &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
+  &.ng-leave, &.ng-enter.ng-enter-active {
+    opacity: 0.8;
+  }
+
+}
+
+.overlay-container {
+  position: fixed;
+  left: 35%;
+  z-index: 101;
+  width: 500px;
+
+  &.ng-enter, &.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  }
+
+  &.ng-enter, &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
+  &.ng-leave, &.ng-enter.ng-enter-active {
+    opacity: 1;
+  }
+
+  .bottom-content {
+    color: white;
+    font-size: 3rem;
+    width: 100%;
+    display: inline-block;
+
+    .left-panel {
+      float: left;
+    }
+
+    .right-panel {
+      float: right;
+    }
+  }
+}
