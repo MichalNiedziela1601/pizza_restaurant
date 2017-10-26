@@ -10,8 +10,12 @@ const UserFactory = function ($http)
     {
         user.isSignedIn = true;
     };
+    const loggout = () =>
+    {
+        user.isSignedIn = false;
+    };
 
-    return {getUser, isSignedIn, signIn};
+    return {getUser, isSignedIn, signIn, loggout};
 };
 
 UserFactory.$inject = ['$http'];

@@ -1,7 +1,8 @@
 class MenuController {
-    constructor(MenuDAO)
+    constructor(MenuDAO, User)
     {
         'ngInject';
+        this.user = User;
         this.menuDao = MenuDAO;
         this.name = 'menu';
         this.menuDao.getMenu().then(menu =>
@@ -37,6 +38,11 @@ class MenuController {
         } else {
             this.showImage = this.items[index - 1].thumb;
         }
+    }
+
+    isAdmin()
+    {
+        return this.user.isSignedIn();
     }
 }
 

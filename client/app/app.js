@@ -12,6 +12,7 @@ import 'normalize.css';
 require('bootstrap-loader');
 
 const $ = require('jquery');
+const _ = require('lodash');
 window.jQuery = $;
 
 

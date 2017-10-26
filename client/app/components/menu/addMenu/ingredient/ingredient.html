@@ -1,0 +1,17 @@
+<div class="ingredient">
+    <div><button type="button" class="btn btn-info" ng-click="$ctrl.addNewIngredient()">Add ingredient</button></div>
+    <div ng-repeat="ingredient in $ctrl.ingredients" class="margin-top ingredient-group">
+        <div ng-if="!ingredient.editMode" class="item">
+            <span ng-click="$ctrl.edit(ingredient)">{{ingredient.name}}</span>
+            <span data-ng-click="$ctrl.remove(ingredient)">
+                    <i class="glyphicon glyphicon-remove-circle text-danger"></i> </span> </div>
+        <ng-form name="ingredientForm" class="form form-inline" ng-if="ingredient.editMode">
+                <span >
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" ng-model="ingredient.name" id="name">
+                </span>
+                    <button type="button" class="btn btn-success" data-ng-click="$ctrl.save(ingredient)" ng-if="ingredient.editMode">Save</button>
+                    <button type="button" class="btn btn-warning" data-ng-click="$ctrl.cancel(ingredient)" ng-if="ingredient.editMode">Cancel</button>
+        </ng-form>
+    </div>
+</div>

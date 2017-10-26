@@ -8,10 +8,15 @@ class NavbarController {
 
     signIn()
     {
-        this.userFactory.signIn().then(data =>
-        {
-            console.log(data);
-        });
+        this.userFactory.signIn();
+    }
+
+    isLogged() {
+        return this.userFactory.isSignedIn();
+    }
+
+    loggout() {
+        this.userFactory.loggout();
     }
 }
 

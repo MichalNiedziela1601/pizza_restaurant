@@ -1,0 +1,20 @@
+prices {
+  .price-item {
+    background: whitesmoke;
+    padding: 10px 12px;
+    margin: 10px 8px;
+  }
+
+  .inline-block {
+    display: inline-block;
+
+    .middle-vertical {
+      vertical-align: middle;
+    }
+  }
+
+  .form-inline .form-group-inline {
+    display: inline-block;
+    margin: 0;
+  }
+}
