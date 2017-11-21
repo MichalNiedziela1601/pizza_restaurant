@@ -10,6 +10,8 @@
 
   a {
     color: $darkTextColor !important;
+
+
   }
 }
 
@@ -23,6 +25,9 @@
 
   a {
     color: $lightTextColor;
+    &:hover {
+      color: $lightTextColor;
+    }
   }
 
   .nav-links,

@@ -3,42 +3,36 @@ const _ = require('lodash');
 class IngredientController {
     constructor()
     {
-        this.editEntry = null;
+        this.ingredient = null;
+        this.editMode = false;
+        this.currentIndex = 0;
     }
 
-    addNewIngredient()
+    save()
     {
-        this.ingredients.push({editMode: true});
-    }
-
-    save(entry)
-    {
-        entry.editMode = false;
-        this.editEntry = null;
-    }
-
-    edit(entry)
-    {
-        this.editEntry = _.cloneDeep(entry);
-        entry.editMode = true;
-    }
-
-    cancel(entry)
-    {
-        entry.editMode = false;
-        if (this.editEntry) {
-            const index = _.findIndex(this.ingredients, i => i.name === entry.name);
-            this.ingredients[index] = this.editEntry;
-            this.editEntry = null;
+        if(this.editMode) {
+            this.ingredients[this.currentIndex] = this.ingredient;
+            this.editMode = false;
         } else {
-            const index = _.findIndex(this.ingredients, i => i.name === entry.name);
-            this.ingredients.splice(index, 1);
+            this.ingredients.push(this.ingredient);
         }
-
+        this.ingredient = null;
     }
 
-    remove(entry) {
-        const index = _.findIndex(this.ingredients, item => item === entry);
+    edit(index)
+    {
+        this.ingredient = _.cloneDeep(this.ingredients[index]);
+        this.currentIndex = index;
+        this.editMode = true;
+    }
+
+    cancel()
+    {
+            this.editMode = false;
+            this.ingredient = null;
+    }
+
+    remove(index) {
         this.ingredients.splice(index,1);
     }
 

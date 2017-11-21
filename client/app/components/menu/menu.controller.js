@@ -7,6 +7,7 @@ class MenuController {
         this.name = 'menu';
         this.menuDao.getMenu().then(menu =>
         {
+            console.log(menu);
             this.items = menu;
         });
         this.show = false;

@@ -2,14 +2,26 @@ prices {
   .price-item {
     background: whitesmoke;
     padding: 10px 12px;
-    margin: 10px 8px;
+    margin: 5px 8px;
+    display: flex;
   }
 
   .inline-block {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
 
-    .middle-vertical {
-      vertical-align: middle;
+    .column {
+      flex-flow: column;
+    }
+
+    .remove-circle {
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+
+      .glyphicon-remove-circle {
+        font-size: 22px;
+      }
     }
   }
 

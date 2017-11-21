@@ -5,6 +5,7 @@ class Prices {
         this.editEntry = null;
         this.titleMode = 'Add price';
         this.editMode = false;
+        this.sizes = [32,40,50];
     }
 
     edit(entry) {
@@ -29,6 +30,10 @@ class Prices {
             this.prices[index] = { size: this.editEntry.size, price: this.editEntry.price, index: index };
         }
         this.editEntry = null;
+    }
+
+    remove(entry) {
+        delete this.prices[entry.index];
     }
 }
 

@@ -2,7 +2,8 @@
     <ng-form name="pricesForm" class="form-inline">
         <div class="form-group-inline">
             <label for="size">Size</label>
-            <input type="number" class="form-control" id="size" data-ng-model="$ctrl.editEntry.size">
+            <select class="form-control" id="size" data-ng-model="$ctrl.editEntry.size"
+            ng-options="o as o for o in $ctrl.sizes">
         </div>
         <div class="form-group-inline">
             <label for="price">Price</label>
@@ -18,14 +19,15 @@
 
 </div>
 <div ng-repeat="price in $ctrl.prices" class="inline-block">
-    <div data-ng-click="$ctrl.edit(price)" class="price-item">
-        <div class="inline-block">
+    <div  class="price-item">
+        <div class="column" data-ng-click="$ctrl.edit(price)">
             <span>Size: {{price.size}}</span><br />
             <span>Price: {{price.price}}</span>
         </div>
-        <div class="inline-block middle-vertical">
+        <div class="remove-circle" data-ng-click="$ctrl.remove(price)">
             <i class="glyphicon glyphicon-remove-circle text-danger"></i>
         </div>
     </div>
+
 
 </div>

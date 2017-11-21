@@ -7,11 +7,21 @@
             </div>
             <div class="form-group">
                 <label>Ingredients</label>
-                <ingredient ingredients="$ctrl.ingredients"></ingredient>
+                <ingredient ingredients="$ctrl.menu.ingredients"></ingredient>
             </div>
             <div class="form-group">
                 <label>Prices</label>
-                <prices prices="$ctrl.prices"></prices>
+                <prices prices="$ctrl.menu.prices"></prices>
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <div class="btn btn-info" ngf-select ng-model="$ctrl.file" name="file" ngf-pattern="'image/*'"
+                     ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
+                <img ngf-thumbnail="$ctrl.file" class="img-thumbnail "></img>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" data-ng-click="$ctrl.submit()">
             </div>
 
         </form>

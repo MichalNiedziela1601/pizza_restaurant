@@ -7,6 +7,7 @@ import AppComponent from './app.component';
 import UiBootstrap from 'angular-ui-bootstrap';
 import Animate from 'angular-animate';
 import Touch from 'angular-touch';
+import NgFileUpload from 'ng-file-upload';
 import Services from './services/services';
 import 'normalize.css';
 require('bootstrap-loader');
@@ -24,7 +25,8 @@ angular.module('app', [
     UiBootstrap,
     Animate,
     Touch,
-    Services
+    Services,
+    NgFileUpload
 ])
         .config($locationProvider =>
         {
