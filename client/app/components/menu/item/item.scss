@@ -11,7 +11,9 @@ item {
   .thumb {
     position: relative;
     overflow: hidden;
-    width: 150px;
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
 
     &:hover {
       .thumb-overlay {
@@ -19,7 +21,7 @@ item {
       }
     }
     img {
-      width: 150px;
+      width: 220px;
       height: auto;
     }
 

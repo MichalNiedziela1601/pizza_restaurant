@@ -15,6 +15,7 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^0.9.0",
     "jquery": "^3.2.1",
+    "ng-file-upload": "^12.2.13",
     "normalize.css": "^3.0.3",
     "resolve-url-loader": "^1.6.0",
     "url-loader": "^0.6.2"
@@ -53,7 +54,7 @@
     "karma-sinon-chai": "1.3.2",
     "karma-sourcemap-loader": "^0.3.4",
     "karma-webpack": "^1.5.1",
-    "lodash": "^4.11.1",
+    "lodash": "4.17.4",
     "mocha": "^2.3.0",
     "ng-annotate-loader": "0.0.10",
     "node-libs-browser": "^0.5.0",

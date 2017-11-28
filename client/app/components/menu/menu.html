@@ -1,4 +1,4 @@
-<navbar></navbar>
+
 <div class="overlay" ng-if="$ctrl.show" ng-click="$ctrl.show = false"></div>
 <div class="overlay-container" ng-if="$ctrl.show"><img ng-src="assets/img/menu/{{$ctrl.showImage}}.jpeg">
     <div class="bottom-content"><div class="left-panel">
@@ -13,6 +13,7 @@
         <h1>{{ $ctrl.name | uppercase }}</h1>
     </header>
     <article>
+        <a class="btn btn-primary" ng-if="$ctrl.isAdmin()" ui-sref="addMenu">Add pizza</a>
         <div class="menu-list">
             <item ng-repeat="item in $ctrl.items" item="item" on-show-image="$ctrl.showGallery(image)"></item>
         </div>

@@ -11,6 +11,7 @@
         "expect" : true,
         "inject": true,
         "angular": true,
-        "$": true
+        "$": true,
+        "_": true
     }
 }

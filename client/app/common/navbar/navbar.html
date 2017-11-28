@@ -10,7 +10,12 @@
         <div class="nav-links">
             <span><a ui-sref="home">Home</a></span>
             <span><a ui-sref="menu">Menu</a></span>
-            <button class="btn btn-primary" ng-click="$ctrl.signIn()">Sign in</button>
+            <span><a ui-sref="about">About</a> </span>
+
+        </div>
+        <div class="menu-button">
+            <button class="btn btn-primary" ng-click="$ctrl.signIn()" ng-if="!$ctrl.isLogged()">Sign in</button>
+            <button class="btn btn-primary" ng-click="$ctrl.loggout()" ng-if="$ctrl.isLogged()">Logout</button>
         </div>
     </div>
 </nav>

@@ -7,11 +7,13 @@ import AppComponent from './app.component';
 import UiBootstrap from 'angular-ui-bootstrap';
 import Animate from 'angular-animate';
 import Touch from 'angular-touch';
+import NgFileUpload from 'ng-file-upload';
 import Services from './services/services';
 import 'normalize.css';
 require('bootstrap-loader');
 
 const $ = require('jquery');
+const _ = require('lodash');
 window.jQuery = $;
 
 
@@ -23,7 +25,8 @@ angular.module('app', [
     UiBootstrap,
     Animate,
     Touch,
-    Services
+    Services,
+    NgFileUpload
 ])
         .config($locationProvider =>
         {

@@ -10,6 +10,8 @@
 
   a {
     color: $darkTextColor !important;
+
+
   }
 }
 
@@ -18,11 +20,14 @@
   background-color: $primaryColor;
   padding: 1rem;
   position: relative;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 
 
   a {
     color: $lightTextColor;
+    &:hover {
+      color: $lightTextColor;
+    }
   }
 
   .nav-links,
@@ -63,5 +68,10 @@
     font-size: 1.6rem;
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .menu-button {
+    display: inline-block;
+    float: right;
   }
 }

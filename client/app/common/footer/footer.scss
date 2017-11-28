@@ -1,0 +1,21 @@
+footer-component {
+  .footer {
+    margin-top: 1em;
+    padding: 2em 0 2em 0;
+    background: #189db6;
+    color: white;
+
+    .address-section {
+      border-left: 1px solid white;
+
+      a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+}
