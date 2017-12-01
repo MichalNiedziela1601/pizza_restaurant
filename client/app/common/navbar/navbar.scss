@@ -42,6 +42,9 @@
     }
 
     margin-right: 40%;
+    @media (max-width: 991px) {
+      margin-right: 20%;
+    }
   }
 
   .pizza-logo {

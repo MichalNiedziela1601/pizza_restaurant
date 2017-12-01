@@ -6,6 +6,7 @@ class IngredientController {
         this.ingredient = null;
         this.editMode = false;
         this.currentIndex = 0;
+        this.titleMode = 'Add';
     }
 
     save()
@@ -13,6 +14,7 @@ class IngredientController {
         if(this.editMode) {
             this.ingredients[this.currentIndex] = this.ingredient;
             this.editMode = false;
+            this.titleMode = 'Add';
         } else {
             this.ingredients.push(this.ingredient);
         }
@@ -24,12 +26,14 @@ class IngredientController {
         this.ingredient = _.cloneDeep(this.ingredients[index]);
         this.currentIndex = index;
         this.editMode = true;
+        this.titleMode = 'Save';
     }
 
     cancel()
     {
             this.editMode = false;
             this.ingredient = null;
+            this.titleMode = 'Add';
     }
 
     remove(index) {
