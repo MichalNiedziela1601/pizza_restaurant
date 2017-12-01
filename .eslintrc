@@ -1,0 +1,17 @@
+{
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "extends": "labnoratory/configurations/es6",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "globals": {
+        "expect" : true,
+        "inject": true,
+        "angular": true,
+        "$": true,
+        "_": true
+    }
+}

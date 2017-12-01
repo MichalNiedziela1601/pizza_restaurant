@@ -16,6 +16,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
+import proxy from 'http-proxy-middleware';
 
 let root = 'client';
 
@@ -90,8 +91,13 @@ gulp.task('serve', () => {
         },
         publicPath: config.output.publicPath
       }),
-      webpackHotMiddleware(compiler)
+      webpackHotMiddleware(compiler),
+      proxy('/api', {
+        target: 'http://localhost:8000',
+        changeOrigin: true
+      })
     ]
+
   });
 });
 

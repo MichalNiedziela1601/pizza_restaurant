@@ -1,9 +1,34 @@
 @import '../common';
+.affixed {
+  position: fixed !important;
+  z-index: 300;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: $bgColor !important;
+  transition: background-color .3s ease-in-out;
+
+  a {
+    color: $darkTextColor !important;
+
+
+  }
+}
 
 .navbar {
   height: 6.5rem;
   background-color: $primaryColor;
   padding: 1rem;
+  position: relative;
+  margin-bottom: 0 !important;
+
+
+  a {
+    color: $lightTextColor;
+    &:hover {
+      color: $lightTextColor;
+    }
+  }
 
   .nav-links,
   .logo {
@@ -11,12 +36,45 @@
   }
 
   .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
+    h1 {
+      line-height: 0.5em;
+      text-transform: capitalize;
+    }
+
+    margin-right: 40%;
+    @media (max-width: 991px) {
+      margin-right: 20%;
+    }
+  }
+
+  .pizza-logo {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    img {
+      width: 60px;
+      animation: rotate 2s linear infinite;
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg)
+      }
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
   }
 
   .nav-links span {
     color: $lightTextColor;
     font-size: 1.6rem;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .menu-button {
+    display: inline-block;
+    float: right;
   }
 }

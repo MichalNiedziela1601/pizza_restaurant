@@ -1,0 +1,33 @@
+<div>
+    <ng-form name="pricesForm" class="form-inline">
+        <div class="form-group-inline">
+            <label for="size">Size</label>
+            <select class="form-control" id="size" data-ng-model="$ctrl.editEntry.size"
+            ng-options="o as o for o in $ctrl.sizes">
+        </div>
+        <div class="form-group-inline">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" data-ng-model="$ctrl.editEntry.price">
+        </div>
+        <div class="form-group-inline">
+            <input type="submit" value="{{$ctrl.titleMode}}" data-ng-click="$ctrl.save()" class="btn btn-success">
+            <button type="button" class="btn btn-warning" data-ng-click="$ctrl.cancel()" data-ng-if="$ctrl.editMode">
+                Cancel
+            </button>
+        </div>
+    </ng-form>
+
+</div>
+<div ng-repeat="price in $ctrl.prices" class="inline-block">
+    <div  class="price-item">
+        <div class="column" data-ng-click="$ctrl.edit(price)">
+            <span>Size: {{price.size}}</span><br />
+            <span>Price: {{price.price}}</span>
+        </div>
+        <div class="remove-circle" data-ng-click="$ctrl.remove(price)">
+            <i class="glyphicon glyphicon-remove-circle text-danger"></i>
+        </div>
+    </div>
+
+
+</div>

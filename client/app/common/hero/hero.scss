@@ -1,11 +1,40 @@
 @import '../common';
 
 .hero {
-  background-color: $darkBgColor;
-  height: 50rem;
-  padding: 3rem;
+  height: 30rem;
 
   * {
     color: $lightTextColor;
+  }
+
+  .hero-slide {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      top: -50px;
+      height: auto;
+    }
+
+    .hero-title {
+      position: absolute;
+      top: 30%;
+      left: 15%;
+      font-size: 3em;
+      width: 50%;
+      text-align: left;
+
+      span {
+        background-color: black;
+      }
+    }
   }
 }

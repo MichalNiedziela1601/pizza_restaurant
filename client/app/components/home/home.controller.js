@@ -1,7 +1,9 @@
 class HomeController {
-  constructor() {
-    this.name = 'home';
-  }
+    constructor()
+    {
+        'ngInject';
+        this.name = 'home';
+    }
 }
 
 export default HomeController;
