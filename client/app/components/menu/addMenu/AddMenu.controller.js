@@ -23,7 +23,14 @@ export default class AddMenuController {
 
         this.upload.upload(dataToUpload).then(() => {
             this.menu.thumb = this.file.name.match(/(\w+).jpeg|jpg/)[1];
-            return this.menuService.addMenu(this.menu);
+            return this.menuService.addMenu(this.menu).then(() => {
+                this.menu = {
+                    ingredients: [],
+                    prices: {}
+                };
+                this.file = {};
+            })
+                .catch(error => console.error(error));
         })
     }
 

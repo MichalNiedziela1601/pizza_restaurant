@@ -2,6 +2,9 @@
     <div uib-carousel active="$ctrl.active" interval="$ctrl.myInterval" no-wrap="$ctrl.noWrap">
         <div uib-slide ng-repeat="slide in $ctrl.slides track by slide.id" index="slide.id">
             <div class="hero-slide" ng-style="{'background-image': 'url('+slide.image+')'}">
+                <div class="hero-title">
+                    <span>{{slide.title}}</span>
+                </div>
                 <div class="carousel-caption">
                     <h4>{{slide.text}}</h4>
                 </div>

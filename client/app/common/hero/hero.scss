@@ -23,5 +23,18 @@
       top: -50px;
       height: auto;
     }
+
+    .hero-title {
+      position: absolute;
+      top: 30%;
+      left: 15%;
+      font-size: 3em;
+      width: 50%;
+      text-align: left;
+
+      span {
+        background-color: black;
+      }
+    }
   }
 }

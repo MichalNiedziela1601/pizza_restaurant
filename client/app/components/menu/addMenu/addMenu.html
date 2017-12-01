@@ -1,9 +1,10 @@
 <div class="container">
     <div class="col-md-12">
-        <form class="form-horizontal">
-            <div class="form-group">
+        <form class="form-horizontal" name="addMenu" novalidate>
+            <div class="form-group " ng-class="{'hasError': addMenu.name.$error.required}">
                 <label for="name">Name</label>
-                <input type="text" id="name" class="form-control" ng-model="$ctrl.menu.name">
+                <input type="text" id="name" name="name" class="form-control" ng-model="$ctrl.menu.name"
+                       required>
             </div>
             <div class="form-group">
                 <label>Ingredients</label>
@@ -21,7 +22,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" data-ng-click="$ctrl.submit()">
+                <input type="submit" value="Submit" class="btn btn-primary" data-ng-click="$ctrl.submit(addMenu)">
             </div>
 
         </form>

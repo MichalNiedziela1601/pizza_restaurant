@@ -1,4 +1,4 @@
-<div>
+<div class="box">
     <h3 class="text-center">{{ $ctrl.item.name | uppercase }}</h3>
     <div class="thumb" ng-click="$ctrl.showImage()">
         <img class="center" ng-src="assets/img/menu/{{$ctrl.item.thumb}}.jpeg">
@@ -12,9 +12,9 @@
     </div>
 
     <div class="prices">
-        <div ng-repeat="(key,value) in $ctrl.item.price" class="price">
-            <span><h5>Size: {{key}} cm</h5></span>
-            <span><h5>Price: {{value}} zł</h5></span>
+        <div ng-repeat="p in $ctrl.item.price" class="price">
+            <span><h5>Size: {{p.size}} cm</h5></span>
+            <span><h5>Price: {{p.price}} zł</h5></span>
         </div>
     </div>
 
