@@ -4,24 +4,31 @@
         <h1 class="page-header text-danger">Witamy</h1>
     </div>
 
-    <div class="row">
+    <div class="row blue-section">
         <div class="text-box">
             <div class="col-md-6"><h2 class="section-text"> Serdecznie zapraszamy do spędzenia miłych chwil w przyjemnej
                 atmosferze naszego lokalu, gdzie miła obsługa
                 i pyszne jedzenie sprawi, że na pewno zaglądniesz do nas jeszcze nie raz...</h2></div>
-            <div class="col-md-6"><img src="assets/img/home/zdjecie_1.jpg" class="img img-responsive"></div>
+            <div class="col-md-6"><img src="assets/img/home/zdjecie_1.jpg" class="img img-responsive pull-right"></div>
         </div>
     </div>
     <hr>
 
     <div class="row">
         <div class="text-box">
-            <div class="col-md-6"><img src="assets/img/home/zdjecie_2.jpg" class="img img-responsive"></div>
+            <div class="col-md-6 clearfix"><img src="assets/img/home/zdjecie_2.jpg" class="img img-responsive pull-left"></div>
             <div class="col-md-6"><h2 class="section-text">Mówią o nas, że serwujemy najlepsze jedzenie w mieście!
                 To dla nas wielkie wyróżnienie i powód do dumy.
                 Dziękujemy i zapraszamy!!
             </h2></div>
         </div>
+    </div>
+
+    <div class="row">
+        <h2>Tu nas znajdziesz: </h2>
+        <ui-gmap-google-map center="$ctrl.map.center" zoom="$ctrl.map.zoom">
+            <ui-gmap-marker coords="$ctrl.marker.cords" idKey="$ctrl.marker.id"></ui-gmap-marker>
+        </ui-gmap-google-map>
     </div>
 
 </main>

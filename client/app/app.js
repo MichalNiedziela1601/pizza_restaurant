@@ -9,13 +9,14 @@ import Animate from 'angular-animate';
 import Touch from 'angular-touch';
 import NgFileUpload from 'ng-file-upload';
 import Services from './services/services';
+import 'angular-google-maps';
+import 'angular-simple-logger';
 import 'normalize.css';
-require('bootstrap-loader');
 
+require('bootstrap-loader');
 const $ = require('jquery');
 const _ = require('lodash');
 window.jQuery = $;
-
 
 angular.module('app', [
     uiRouter,
@@ -26,14 +27,21 @@ angular.module('app', [
     Animate,
     Touch,
     Services,
-    NgFileUpload
+    NgFileUpload,
+    'uiGmapgoogle-maps',
+    'nemLogging'
 ])
-        .config($locationProvider =>
+        .config(($locationProvider, uiGmapGoogleMapApiProvider) =>
         {
             'ngInject';
             // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
             // #how-to-configure-your-server-to-work-with-html5mode
             $locationProvider.html5Mode(true).hashPrefix('!');
+            uiGmapGoogleMapApiProvider.configure({
+                key: 'AIzaSyDuvC85BSQuPcUDuGIJLhDbtpLgxDVds0Y',
+                v: '3.20',
+                libraries: 'geometry,visualization'
+            })
         })
 
         .component('app', AppComponent);
