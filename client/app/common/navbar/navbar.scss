@@ -7,26 +7,47 @@
   right: 0;
   background-color: $bgColor !important;
   transition: background-color .3s ease-in-out;
-
   a {
     color: $darkTextColor !important;
-
-
   }
 }
 
+.topstate {
+  background-color: $primaryColor;
+  transition: background-color .3s ease-in-out;
+}
+
+
+
 .navbar {
   height: 6.5rem;
-  background-color: $primaryColor;
   padding: 1rem;
   position: relative;
   margin-bottom: 0 !important;
+
+  .active {
+    color: $primaryColor;
+    background: $lightTextColor;
+    padding: 4px;
+    text-decoration: none;
+  }
 
 
   a {
     color: $lightTextColor;
     &:hover {
       color: $lightTextColor;
+      text-decoration: underline;
+
+      &.active {
+        color: $primaryColor;
+      }
+    }
+
+    .active {
+      &:hover {
+
+      }
     }
   }
 
