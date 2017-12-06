@@ -1,3 +1,28 @@
+@import "../../common/common";
 .home {
-  color: red;
+  font-family: 'Shadows Into Light', cursive;
+
+  .text-box {
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  .section-text {
+    line-height: 1.7;
+  }
+
+  .margin-top {
+    margin-top: 2em;
+  }
+
+  .blue-section {
+    background-color: $primaryColor;
+  }
+
+  .angular-google-map-container { height: 400px; }
 }
